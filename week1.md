@@ -1,7 +1,9 @@
 #  National Museum survey and data analysis
 ---
+
 National Museum visit
 ---------------------
+
 The visit to the museum for survey was a completely new experience for me. I have never observed visitor behavior or approached strangers for interviews before, so stepping out of my comfort zone tool some efforts, but it turned out to be a fun challenge that I enjoyed. An interesting pattern I found while observing people’s behavior was that none of the visitors interacted with the audio tour available except only one person who used it, while the rest didn't pay attention. I believe it's an accessibility issue. For example, one of the audios QR codes was in the middle between 2 big paintings in G04, this causes the visitor to pay more attention to the paintings and overlooking the QR code. Adding a clear visual indicator could solve this and guide the visitors to the audio content. Out of the different visitors, one outlier stood out. A young adult who was moving methodically in the different galleries, he would spend around 5 minutes reading the text carefully, but what is more surprising is he rarely interacted with interactive screens or audio tours. Another visitor who I talked to didn’t know that the screens are interactive, I had to show him that he can interact and learn new information from the interactive screens. What I learned the most from this experience was how people observe and behave differently inside museums, some prefer reading text, others prefer interactive screens or movies, and while some move randomly and others methodically, all of this helps different habits are important when building museums. 
 
 Data Analysis
