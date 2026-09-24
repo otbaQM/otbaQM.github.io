@@ -10,8 +10,6 @@ Data Analysis
 -------------------
 A survey with 200 respondents from different ages and nationalities, where I did data analysis for it to find insight and what observation I can reach with it. Instead of using tools I already knew, I decided to challenge myself by learning Pandas and Jupyter Notebooks. I ran into some problems while setting up the virtual environments and installing the dependencies. The process took longer than I expected. I scanned the dataset to build a solid understanding of the data for the report and structure the report. From all the data available, I’m still surprised with how tourists heard about the museum, only 10 of 200 heard about the museum from social media, as shown in the figure below. With today’s world where social media is the most important pillar in marketing, I expected that number to be higher. Working with Pandas and Jupyter notebook was interesting experience. How it is possible to simply call a function to run complex calculations, to compare multiple columns to find hidden patterns in the data and being able to output visual charts of the results. What I learned the most from this experience was the ability to find out hidden patterns and problems that others may have overlooked and how 2 seemingly separated data columns can result in a strong correlation.  
 
-<div align="center">
-
-![How tourist heard about the Museum](images/week1.png)
-
-</div>
+<p align="center">
+  <img src="images/week1.png" alt="How tourist heard about the Museum" />
+</p>
