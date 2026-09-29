@@ -1,0 +1,38 @@
+body {
+  font-family: 'Sakkal Majalla', 'Times New Roman', serif;
+  font-size: 22px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 40px;
+  line-height: 1.6;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+h1{
+  font-size: 25px;
+}
+h2 {
+  font-size: 24px;
+
+}
+
+html {
+  background: #464646;
+}
+
+@media (max-width: 880px) {
+  body {
+    padding: 24px;
+  }
+}
+
+.center-img {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.center-img img {
+  max-width: 100%;
+  height: auto;
+}
