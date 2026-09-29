@@ -1,3 +1,8 @@
+---
+layout: default
+---
+
+
 #  National Museum survey and data analysis
 ---
 
