@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Audio Guide Tour</title>
+    <link rel="stylesheet" href="assests/css/style.css" />
+  </head>
+  <body>
+    <div class="decorative-icons" aria-hidden="true"></div>
+
+    <h1>Audio Guide Tour for Bagdad Group</h1>
+
+    <p>
+      This week I had to work on creating audio guide for a fictional
+      exhibition, by forking the Australian Center for Moving Image’s source
+      code. Where they had made an audio tour for Scorsese’s one of the best
+      movies directors, and definitely for me, a person that loves cinema,
+      Scorsese is one of my favorites directors (I watched 6 of his feature
+      movies, planning to watch at least 6 more).
+    </p>
+
+    <p align="center">
+      <img src="images/week2-02.png" alt="Scorsese Watchlist" />
+    </p>
+
+    <p>
+      I needed an idea for my audio guide and mathaf has an upcoming exhibition
+      for bagdad modern art "What Lingers in the Artist Mind: Experiments and
+      Legacies of the Baghdad Modern Art Group" which is opening on 25th of
+      October which i thought would be a great chance to create an audio tour
+      for.
+    </p>
+
+    <p align="center">
+      <img src="images/week2-01.png" alt="Opening date for Bagdad exhibition" />
+    </p>
+
+    <p>
+      While scanning through the project, I got a general understanding of the
+      way it works. It was a good idea to use html, CSS and JavaScript only. It
+      served the purpose by working up until this day. I cloned the repository
+      and had my own version. I decided to have 6 stops in my audio guide.
+    </p>
+    <ul>
+      <li>Stop 1: Introduction</li>
+      <li>Stops 2-5: Paintings</li>
+      <li>Stop 6: The legacy of the Bagdad Group</li>
+    </ul>
+    <p>
+      I had to get the content that i wanted to use in my
+      text-to-speech, I used the mathaf website as my resource, the page talking
+      about the Bagdad group wasn't enough so i went to the biography pages that
+      is in mathaf website, which was rich in information about the artist of
+      the Bagdad group.
+    </p>
+
+    <p align="center">
+      <img src="images/week2-03.png" alt="Opening date for Bagdad exhibition" />
+    </p>
+
+    <script>
+      const iconContainer = document.querySelector('.decorative-icons');
+      const iconPaths = [
+        'images/Icons/headphones-red.png',
+        'images/Icons/headphones-light.png',
+        'images/Icons/headphones-green.png',
+        'images/Icons/headphones-dark.png'
+      ];
+
+      function placeIcons() {
+        iconContainer.replaceChildren();
+
+        const gutterWidth = (window.innerWidth - document.body.offsetWidth) / 2;
+        if (gutterWidth < 70) {
+          return;
+        }
+
+        for (let index = 0; index < 40; index += 1) {
+          const icon = document.createElement('img');
+          const size = 28 + Math.random() * 36;
+          const side = Math.random() < 0.5 ? 'left' : 'right';
+
+          icon.src = iconPaths[index % iconPaths.length];
+          icon.alt = '';
+          icon.style.width = `${size}px`;
+          icon.style.top = `${Math.random() * 100}vh`;
+          icon.style[side] = `${Math.random() * Math.max(gutterWidth - size, 0)}px`;
+          icon.style.opacity = `${0.3 + Math.random() * 0.35}`;
+          icon.style.transform = `rotate(${Math.random() * 50 - 25}deg)`;
+          iconContainer.appendChild(icon);
+        }
+      }
+
+      placeIcons();
+      window.addEventListener('resize', placeIcons);
+    </script>
+  </body>
+</html>

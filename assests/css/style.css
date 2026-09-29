@@ -9,6 +9,29 @@ body {
   box-sizing: border-box;
 }
 
+.index-page {
+  max-width: none;
+  min-height: 100vh;
+  background: #464646;
+  color: #ffffff;
+}
+
+.index-page h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+.index-page ul {
+  font-size: 36px;
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+.index-page a {
+  color: #ffffff;
+}
+
 h1{
   font-size: 25px;
 }
@@ -21,7 +44,34 @@ html {
   background: #464646;
 }
 
+.decorative-icons {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decorative-icons img {
+  position: absolute;
+}
+
+body > *:not(.decorative-icons) {
+  position: relative;
+  z-index: 1;
+}
+
+body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+}
+
 @media (max-width: 880px) {
+  .decorative-icons {
+    display: none;
+  }
+
   body {
     padding: 24px;
   }
