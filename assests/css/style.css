@@ -67,6 +67,11 @@ body img {
   margin: 20px auto;
 }
 
+body img[src*="week2-08"] {
+  max-height: 600px;
+  width: auto;
+}
+
 @media (max-width: 880px) {
   .decorative-icons {
     display: none;
