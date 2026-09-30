@@ -8,15 +8,17 @@
   <body>
     <div class="decorative-icons" aria-hidden="true"></div>
 
-    <h1>Audio Guide Tour for Bagdad Group</h1>
+    <h1>Audio Guide Tour And 3-2-1 QOSM</h1>
+
+    <h2>Audio Guide Tour for Bagdad Group</h2>
 
     <p>
-      This week I had to work on creating audio guide for a fictional
-      exhibition, by forking the Australian Center for Moving Image’s source
-      code. Where they had made an audio tour for Scorsese’s one of the best
-      movies directors, and definitely for me, a person that loves cinema,
-      Scorsese is one of my favorites directors (I watched 6 of his feature
-      movies, planning to watch at least 6 more).
+      This week, I worked on creating audio guide for a fictional exhibition by
+      forking the Australian Center for Moving Image’s (ACMI) open-source
+      repository. ACMI originally built an audio tour centered around Martin
+      Scorsese, one of cinema's best directors, and personally one of my
+      all-time favorites (I’ve watched six of his feature films so far and
+      wanting to watch at least six more).
     </p>
 
     <p align="center">
@@ -24,11 +26,11 @@
     </p>
 
     <p>
-      I needed an idea for my audio guide and mathaf has an upcoming exhibition
-      for bagdad modern art "What Lingers in the Artist Mind: Experiments and
-      Legacies of the Baghdad Modern Art Group" which is opening on 25th of
-      October which i thought would be a great chance to create an audio tour
-      for.
+      To start with I needed an idea for the audio guide. I noticed mathaf has
+      an upcoming exhibition on Bagdad modern art titled "What Lingers in the
+      Artist Mind: Experiments and Legacies of the Baghdad Modern Art Group"
+      opening on 25th of October which I think would be the perfect opportunity
+      to create an audio tour around it.
     </p>
 
     <p align="center">
@@ -36,10 +38,12 @@
     </p>
 
     <p>
-      While scanning through the project, I got a general understanding of the
-      way it works. It was a good idea to use html, CSS and JavaScript only. It
-      served the purpose by working up until this day. I cloned the repository
-      and had my own version. I decided to have 6 stops in my audio guide.
+      While looking at the source code, I got a general understanding of how the
+      project works. I really appreciated that the original project relied
+      purely on HTML, CSS, and JavaScript without unnecessary complexities, it
+      serves its purpose perfectly and remains functional to this day. After
+      cloning the repository to build my custom version, I structured the tour
+      into six distinct stops:
     </p>
     <ul>
       <li>Stop 1: Introduction</li>
@@ -47,24 +51,85 @@
       <li>Stop 6: The legacy of the Bagdad Group</li>
     </ul>
     <p>
-      I had to get the content that i wanted to use in my
-      text-to-speech, I used the mathaf website as my resource, the page talking
-      about the Bagdad group wasn't enough so i went to the biography pages that
-      is in mathaf website, which was rich in information about the artist of
-      the Bagdad group.
+      For the tour content, I needed source material to feed into my
+      text-to-speech engine. I used the mathaf page about the Bagdad group as my
+      resource, but I needed more information about the artists, hence I used
+      the biography pages that are in mathaf website, which was rich source of
+      information about the Bagdad group.
     </p>
 
     <p align="center">
       <img src="images/week2-03.png" alt="Opening date for Bagdad exhibition" />
     </p>
 
+    <p>
+      After writing the script for the audio guide, I used ElevenLabs to test
+      different AI voices and find one that sounded natural and suited a museum
+      narrative. After listening to many voices, I chose "Christopher," which
+      sounded the most human and fit the tone of the guide. The text-to-speech
+      generation process was straightforward.
+    </p>
+    <p align="center">
+      <img src="images/week2-04.png" alt="Opening date for Bagdad exhibition" />
+    </p>
+
+    <p align="center">
+      <img src="images/week2-05.png" alt="Opening date for Bagdad exhibition" />
+    </p>
+
+    <p>
+      Generating the Arabic version was surprisingly good, though it had a few
+      pronunciation flaws. In Arabic, diacritics (tashkeel) alter word meanings,
+      and the AI did struggle to pronounce some words correctly without vowel
+      markings. I tested Google AI Studio as well but ran into similar
+      challenges with Arabic pronunciation accuracy.
+    </p>
+
+    <p>
+      For the website styling, I made a lot of modifications to match mathaf
+      visual identity and coloring. I was searching for a high-resolution mathaf
+      logo but I couldn't find a clean version. I solved this by copying the
+      outerHTML of the logo, and saving it as an SVG file and I got the logo.
+    </p>
+
+    <p align="center">
+      <img src="images/week2-06.png" alt="Opening date for Bagdad exhibition" />
+    </p>
+    <p align="center">
+      <img src="images/week2-07.png" alt="Opening date for Bagdad exhibition" />
+    </p>
+
+    <p>
+      To manage both English and Arabic speakers, I translated all the text and
+      added a language selector. This feature allows users to set their
+      preferred language once and seamlessly maintain that choice as they
+      navigate across all six stops.
+    </p>
+
+    <h2>3-2-1 Qatar Olympic & Sports Museum</h2>
+
+    <p>
+      We visited the 3-2-1 Qatar Olympic & Sports Museum, which for me has been
+      the best museum so far. I found the interactive activities engaging, and
+      the sheer volume of exhibits. The football section was a bit smaller than
+      I expected but I didn’t expect to see Michael Schumacher's real Formula 1
+      car. It so well-designed and engineered that I am definitely going back
+      just to admire it again. The interactive physical games at the end were
+      really fun, although the instructions were slightly confusing at first but
+      once you try how it works, they are easy to play with.
+    </p>
+      <p align="center">
+      <img src="images/week2-08.jpeg" alt="Opening date for Bagdad exhibition" />
+    </p>
+
+
     <script>
-      const iconContainer = document.querySelector('.decorative-icons');
+      const iconContainer = document.querySelector(".decorative-icons");
       const iconPaths = [
-        'images/Icons/headphones-red.png',
-        'images/Icons/headphones-light.png',
-        'images/Icons/headphones-green.png',
-        'images/Icons/headphones-dark.png'
+        "images/Icons/headphones-red.png",
+        "images/Icons/headphones-light.png",
+        "images/Icons/headphones-green.png",
+        "images/Icons/f1.png",
       ];
 
       function placeIcons() {
@@ -76,15 +141,16 @@
         }
 
         for (let index = 0; index < 40; index += 1) {
-          const icon = document.createElement('img');
+          const icon = document.createElement("img");
           const size = 28 + Math.random() * 36;
-          const side = Math.random() < 0.5 ? 'left' : 'right';
+          const side = Math.random() < 0.5 ? "left" : "right";
 
           icon.src = iconPaths[index % iconPaths.length];
-          icon.alt = '';
+          icon.alt = "";
           icon.style.width = `${size}px`;
           icon.style.top = `${Math.random() * 100}vh`;
-          icon.style[side] = `${Math.random() * Math.max(gutterWidth - size, 0)}px`;
+          icon.style[side] =
+            `${Math.random() * Math.max(gutterWidth - size, 0)}px`;
           icon.style.opacity = `${0.3 + Math.random() * 0.35}`;
           icon.style.transform = `rotate(${Math.random() * 50 - 25}deg)`;
           iconContainer.appendChild(icon);
@@ -92,7 +158,7 @@
       }
 
       placeIcons();
-      window.addEventListener('resize', placeIcons);
+      window.addEventListener("resize", placeIcons);
     </script>
   </body>
 </html>
