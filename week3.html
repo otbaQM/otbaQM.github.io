@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Globel Art Across Eras</title>
+    <link rel="stylesheet" href="assests/css/style.css" />
+  </head>
+  <body>
+    <div class="decorative-icons" aria-hidden="true"></div>
+
+    <h1>Globel Art Across Eras</h1>
+
+    <p>
+      This week, I explored open-source artwork collections provided freely by
+      museums. To get inspired, I spent some time researching existing projects,
+      which led me to brainstorm three ideas:
+    </p>
+    <ul>
+      <li>
+        <strong>History Daily Trivia:</strong> Daily web app featuring an
+        artwork created on "this day in history," or a guessing game based on
+        the century, artist, or origin.
+      </li>
+      <li>
+        <strong>Heatmap:</strong> An interactive map visualizing artwork origin
+        by country, allowing users to compare global distribution across
+        different collections.
+      </li>
+      <li>
+        <strong>Time Traveler:</strong> A timeline-based interactive experience
+        where users slide through different periods in history and see the
+        artworks that were created across the world during the same period.
+      </li>
+    </ul>
+    <p>
+      I preferred the time traveler ideas because I find it the most interesting
+      out of all 3. After deciding the idea, I had to search through different
+      collections to find the most suitable one for the project. I encountered
+      several museum APIs like The Metropolitan Museum of Art (Met), Art
+      Institute of Chicago (AIC) and Cleveland Museum of Art (CMA).
+    </p>
+
+    <p>
+      The problem with the Met API is that its search endpoint returns only the
+      objects IDs of the artworks:
+    </p>
+
+    <pre id="json"></pre>
+    <script>
+      const data = {
+        total: 5,
+        objectIDs: [437133, 436535, 437329, 436998, 437500],
+      };
+
+      document.getElementById("json").textContent = JSON.stringify(
+        data,
+        null,
+        2,
+      );
+    </script>
+
+    <p>
+      You can notice there is no title, region, date or image. To retrieve this
+      information, the application must send separate requests for each Object
+      ID (/object/437133). Therefore, retrieving 5 artworks requires 6 requests,
+      one for the search request and five additional requests to obtain their
+      individual metadata and images. As the application retrieves more
+      artworks, the number of HTTP requests increases, which can increase
+      loading time and make the application more complex.
+    </p>
+
+    <p>
+      Unlike the Met API, the AIC API returns the artwork metadata directly
+      within the search response, so the application does not need to make an
+      additional request for every artwork but AIC provides an image_id rather
+      than a direct image URL, requiring the application to construct a IIIF
+      image URL for each artwork.
+    </p>
+
+    <p>
+      The CMA API solves the problems with AIC and Met API, since it provides
+      artwork metadata and image information within the response to the request,
+      reducing the number of additional requests and implementation steps
+      required, which makes it the most suitable of the three API collections.
+    </p>
+
+    <p>
+      To build this, I remembered an animation website project I did previously
+      and decided to fork it. The initial coloring and design were a bit too
+      dark, so I looked for inspiration on <a href="http://dneg.com/">DNEG</a>, which was nominated for an
+      Awwward (like the Oscars of web design).
+    </p>
+
+    <p align="center">
+      <img src="images/week3-01.png" alt="Opening date for Bagdad exhibition" />
+    </p>
+    <p align="center">
+      <img src="images/week3-02.png" alt="Opening date for Bagdad exhibition" />
+    </p>
+
+    
+
+    <p>
+      To make the site easy to compare different continents, I put the art cards
+      alongside each other showing the title and author. If users want more
+      information about the artwork, they can click on the art card to read the
+      exact country, exact date, dimensions, medium, description and a
+      high-resolution image of the artwork. I also added a year slider on the
+      side so users can freely navigate eras, along with a tracker at the bottom
+      showing how many slides are left for that era.
+    </p>
+    <p align="center">
+      <img
+        src="images/week3-03.png"
+        alt="Opening date for Bagdad exhibition"
+      />
+    </p>
+    <p align="center">
+      <img
+        src="images/week3-04.png"
+        alt="Opening date for Bagdad exhibition"
+      />
+    </p>
+
+    <p>
+      <strong>This is the link for the website:</strong>
+      <a href="https://globel-art-across-eras.vercel.app/" target="_blank">
+        <strong>Globel Art Across Eras</strong>
+      </a>
+    </p>
+
+    
+  </body>
+</html>
