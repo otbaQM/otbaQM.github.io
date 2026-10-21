@@ -130,42 +130,6 @@
       <img src="images/week5-07.png" alt="Opening date for Bagdad exhibition" />
     </p>
 
-    <script>
-      const iconContainer = document.querySelector(".decorative-icons");
-      const iconPaths = [
-        "images/Icons/headphones-red.png",
-        "images/Icons/headphones-light.png",
-        "images/Icons/headphones-green.png",
-        "images/Icons/f1.png",
-      ];
-
-      function placeIcons() {
-        iconContainer.replaceChildren();
-
-        const gutterWidth = (window.innerWidth - document.body.offsetWidth) / 2;
-        if (gutterWidth < 70) {
-          return;
-        }
-
-        for (let index = 0; index < 40; index += 1) {
-          const icon = document.createElement("img");
-          const size = 28 + Math.random() * 36;
-          const side = Math.random() < 0.5 ? "left" : "right";
-
-          icon.src = iconPaths[index % iconPaths.length];
-          icon.alt = "";
-          icon.style.width = `${size}px`;
-          icon.style.top = `${Math.random() * 100}vh`;
-          icon.style[side] =
-            `${Math.random() * Math.max(gutterWidth - size, 0)}px`;
-          icon.style.opacity = `${0.3 + Math.random() * 0.35}`;
-          icon.style.transform = `rotate(${Math.random() * 50 - 25}deg)`;
-          iconContainer.appendChild(icon);
-        }
-      }
-
-      placeIcons();
-      window.addEventListener("resize", placeIcons);
-    </script>
+    
   </body>
 </html>
